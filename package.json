@@ -4,10 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "tsc && node ./dist/server.js",
+    "start": "node dist/server.js",
     "dev": "nodemon --config nodemon.json src/server.ts",
     "build": "tsc",
-    "seed": "tsc && node ./dist/utils/seed.js"
+    "clean": "rimraf dist",
+    "seed": "npm run clean && tsc && node ./dist/utils/seed.js",
+    "cb": "npm run clean && npm run build"
   },
   "devDependencies": {
     "@types/node": "^17.0.8",
@@ -26,6 +28,7 @@
     "mongoose": "^6.1.6",
     "pino": "^7.6.3",
     "pino-pretty": "^7.3.0",
-    "point-of-view": "^5.0.0"
+    "point-of-view": "^5.0.0",
+    "rimraf": "^3.0.2"
   }
 }

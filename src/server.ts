@@ -8,7 +8,7 @@ import mainApp from './app';
 const app: fastify.FastifyApp = Fastify({
   logger: config.APP.logger,
   pluginTimeout: 10000,
-  disableRequestLogging: true
+  disableRequestLogging: false
 });
 
 app.register(mainApp);

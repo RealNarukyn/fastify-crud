@@ -2,7 +2,7 @@ node_modules
 .prettierrc
 .env
 # Comment the line below to upload the build
-dist
+# dist
 
 # Logs
 logs

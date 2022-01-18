@@ -20,7 +20,7 @@ import categoryRouter from './router/category.routes';
 
 const mainApp: FastifyPluginAsync = async (app: FastifyApp) => {
   // -- Connect to the Database
-  await mongoose
+  mongoose
     .connect(config.MONGO.host)
     .then(() => console.log('Connected to Database'))
     .catch((err) => {
