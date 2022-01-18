@@ -10,7 +10,9 @@ const getDBHost = (): string => {
   if (process.env.environment === 'dev')
     return `mongodb://localhost:27017/${MONGO_DATABASE}`;
 
-  return `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@localhost:27017/${MONGO_DATABASE}`;
+  if (process.env.MONGO_HOST) return process.env.MONGO_HOST;
+
+  throw new Error('NOT GETTING A PROPER MONGO HOST value...');
 };
 
 // -- [ APP Config ]
