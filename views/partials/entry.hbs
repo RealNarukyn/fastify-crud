@@ -1,0 +1,14 @@
+<div class="card custom-card" style="margin: 1em; width: 18rem;" data-aos="zoom-in">
+    <div class="card-body">
+        <h5 class="card-title">{{entry.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+            {{#if category.category}}
+            {{category.category}}
+            {{else}}
+            Unkown Category
+            {{/if}}
+        </h6>
+        <p class="card-text">{{entry.description}}</p>
+        <a href="/entries/rm?_id={{entry._id}}" class="card-link">Delete</a>
+    </div>
+</div>

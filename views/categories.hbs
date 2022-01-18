@@ -1,0 +1,40 @@
+<section id="section-add-category" class="section-add">
+    <div class="card custom-add-card">
+        <div class="card-body">
+            <h4 class="card-title"><b>Add a new category</b></h4>
+
+            <form action="/categories" method="POST">
+
+                <div class="form-group">
+                    <label for="categoryInput"><b>Category</b></label>
+                    <input type="text" class="form-control" id="categoryInput" name="category"
+                        placeholder="Enter Category" required>
+                    <small id="emailHelp" class="form-text text-muted">It's better if you use a fancy category
+                        name...</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="descriptionInput"><b>Description</b></label>
+                    <textarea class="form-control" id="descriptionInput" name="description"
+                        placeholder="A short description about the category you're about to create..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+
+        </div>
+    </div>
+
+</section>
+
+<hr />
+<section id="section-categories" class="container">
+    <h3>Categories List</h3>
+    <div class="row custom-row">
+        {{#each data}}
+        {{#with this}}
+        {{> category}}
+        {{/with}}
+        {{/each}}
+    </div>
+</section>

@@ -1,0 +1,31 @@
+{
+  "name": "w11d3-fastify-crud",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc && node ./dist/server.js",
+    "dev": "nodemon --config nodemon.json src/server.ts",
+    "build": "tsc",
+    "seed": "tsc && node ./dist/utils/seed.js"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.8",
+    "eslint": "^8.6.0",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "dotenv": "^11.0.0",
+    "fastify": "^3.25.3",
+    "fastify-formbody": "^5.2.0",
+    "fastify-plugin": "^3.0.0",
+    "fastify-static": "^4.5.0",
+    "handlebars": "^4.7.7",
+    "mongoose": "^6.1.6",
+    "pino": "^7.6.3",
+    "pino-pretty": "^7.3.0",
+    "point-of-view": "^5.0.0"
+  }
+}
