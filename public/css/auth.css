@@ -1,0 +1,35 @@
+.center-element {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/*#region [ Login ] */
+.login-section {
+  height: 75vh;
+}
+
+.my-card {
+  width: 40vw;
+
+  margin: 1em;
+  padding: 1.5em;
+
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*#endregion Login */
+
+/*#region [ SignUp ] */
+.signup-section {
+}
+
+/*#endregion [ SignUp ] */

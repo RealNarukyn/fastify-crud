@@ -50,10 +50,8 @@ const mainApp: FastifyPluginAsync = async (app: FastifyApp) => {
   // -- Accept Form Bodies
   app.register(formBodyPlugin);
 
-  // -- Router
+  // -- Import all ROUTING
   app.register(mainRouter);
-  app.register(entryRouter, { prefix: '/entries' });
-  app.register(categoryRouter, { prefix: '/categories' });
 };
 
 export default mainApp;
