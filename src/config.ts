@@ -47,7 +47,7 @@ const MONGO = {
 const GITHUB = {
   CLIENT_ID: Validators.checkEnv('GITHUB_CLIENT_ID'),
   CLIENT_SECRET: Validators.checkEnv('GITHUB_CLIENT_SECRET'),
-  CALLBACK: 'http://localhost:3000/auth/github/callback'
+  CALLBACK: Validators.checkEnv('GITHUB_CALLBACK')
 };
 
 // #endregion
