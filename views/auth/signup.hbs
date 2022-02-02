@@ -7,6 +7,14 @@
 {{/if}}
 
 {{#unless user}}
+
+{{#if error}}
+<div>
+    <h2>Error!!</h2>
+    <p>{{error}}</p>
+</div>
+{{/if}}
+
 <section class="signup-section center-element">
     <div class="my-card">
         <h2>Sign Up</h2>
