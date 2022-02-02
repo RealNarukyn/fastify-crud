@@ -47,7 +47,7 @@ const mainApp: FastifyPluginAsync = async (app: FastifyApp) => {
   // -- Serve static files
   app.register(fastifyStatic, {
     root: path.join(__dirname, '../public'),
-    prefix: '/static/',
+    prefix: '/static/'
   });
 
   // -- Serve .hbs views
@@ -59,22 +59,22 @@ const mainApp: FastifyPluginAsync = async (app: FastifyApp) => {
         navbar: './views/partials/navbar.hbs',
         footer: './views/partials/footer.hbs',
         entry: './views/partials/entry.hbs',
-        category: './views/partials/category.hbs',
-      },
-    },
+        category: './views/partials/category.hbs'
+      }
+    }
   });
 
   // -- Create connection to the database for sessions
   app.register(fastifyMongodb, {
     forceClose: true,
     url: config.MONGO.host,
-    name: 'MONGO1',
+    name: 'MONGO1'
   });
 
   // -- Prepare accepting cookies
   app.register(cookie, {
     secret: 'my-secret', // for cookies signature
-    parseOptions: {}, // options for parsing cookies
+    parseOptions: {} // options for parsing cookies
   } as FastifyCookieOptions);
 
   // -- Set where to store the session in the database
@@ -83,9 +83,9 @@ const mainApp: FastifyPluginAsync = async (app: FastifyApp) => {
     cookieName: 'YOUR_SESSION_COOKIE_NAME',
     secret: 'the secret must have length 32 or greater',
     cookie: {
-      secure: false,
+      secure: false
     },
-    store: store as fastifySession.SessionStore,
+    store: store as fastifySession.SessionStore
   });
 
   // -- ???????

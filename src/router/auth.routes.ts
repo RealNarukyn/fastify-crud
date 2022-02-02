@@ -23,7 +23,7 @@ const authRouter: FastifyPluginAsync = async (app: FastifyApp) => {
     '/github/callback',
     fastifyPassport.authenticate('github', {
       successRedirect: '/',
-      failureRedirect: '/login',
+      failureRedirect: '/auth/login',
       failureFlash: true
     })
   );

@@ -14,8 +14,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 // -- My Controllers
 const main_controller_1 = __importDefault(require("../controller/main.controller"));
+// -- Routers
+const entry_routes_1 = __importDefault(require("./entry.routes"));
+const category_routes_1 = __importDefault(require("./category.routes"));
+const auth_routes_1 = __importDefault(require("./auth.routes"));
 const mainRouter = (app) => __awaiter(void 0, void 0, void 0, function* () {
     // -- [ GET Routers ]
     app.get('/', main_controller_1.default.main);
+    // -- [ Other Routers ]
+    app.register(entry_routes_1.default, { prefix: '/entries' });
+    app.register(category_routes_1.default, { prefix: '/categories' });
+    app.register(auth_routes_1.default, { prefix: '/auth' });
 });
 exports.default = mainRouter;

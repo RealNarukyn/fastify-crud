@@ -12,6 +12,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable no-await-in-loop */
+/* eslint-disable camelcase */
 const mongoose_1 = __importDefault(require("mongoose"));
 // -- [ Globals ]
 const config_1 = __importDefault(require("../config"));
@@ -56,7 +58,7 @@ const num_entries = 10;
         const newEntry = new entry_model_1.EntryModel({
             title: `Entry ${i}`,
             description: `Default description for Entry ${i}`,
-            category: defaultCategories[rand]['_id']
+            category: defaultCategories[rand]._id
         });
         yield newEntry.save();
     }

@@ -30,13 +30,13 @@ EntryController.main = (request, reply) => __awaiter(void 0, void 0, void 0, fun
             category: categories.filter((e) => e._id.equals(entries[i].category))[0]
         });
     }
-    reply.view('views/entries.hbs', { data: data, categories });
+    reply.view('views/entries.hbs', { data, categories });
 });
 EntryController.search = (request, reply) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(request.body);
     const { category } = request.body;
     const entries = yield entry_model_1.EntryModel.find({
-        category: category
+        category
     }).lean();
     const categories = yield category_model_1.CategoryModel.find().lean();
     // -- Returning Object
@@ -48,7 +48,7 @@ EntryController.search = (request, reply) => __awaiter(void 0, void 0, void 0, f
             category: categories.filter((e) => e._id.equals(entries[i].category))[0]
         });
     }
-    reply.view('views/entries.hbs', { data: data, categories });
+    reply.view('views/entries.hbs', { data, categories });
 });
 EntryController.remove = (request, reply) => __awaiter(void 0, void 0, void 0, function* () {
     const { _id } = request.query;

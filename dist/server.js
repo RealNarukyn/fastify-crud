@@ -9,7 +9,7 @@ const app_1 = __importDefault(require("./app"));
 const app = (0, fastify_1.default)({
     logger: config_1.default.APP.logger,
     pluginTimeout: 10000,
-    disableRequestLogging: false
+    disableRequestLogging: true
 });
 app.register(app_1.default);
 app.listen(config_1.default.APP.port, '0.0.0.0', (err) => {
