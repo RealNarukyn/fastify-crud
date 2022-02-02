@@ -1,3 +1,12 @@
+{{#if user}}
+<h2 style="margin:1em; width:100%; text-align:center">
+    GET OUT OF HERE!!!!!
+    <br>
+    YOU'RE ALREADY LOGGED IN
+</h2>
+{{/if}}
+
+{{#unless user}}
 <section class="login-section center-element">
     <div class="my-card">
         <h2>Login</h2>
@@ -22,3 +31,4 @@
         </form>
     </div>
 </section>
+{{/unless}}

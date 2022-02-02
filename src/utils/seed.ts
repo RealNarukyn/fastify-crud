@@ -1,3 +1,5 @@
+/* eslint-disable no-await-in-loop */
+/* eslint-disable camelcase */
 import mongoose from 'mongoose';
 
 // -- [ Globals ]
@@ -51,7 +53,7 @@ const num_entries = 10;
     const newEntry: IEntry = new EntryModel({
       title: `Entry ${i}`,
       description: `Default description for Entry ${i}`,
-      category: defaultCategories[rand]['_id']
+      category: defaultCategories[rand]._id
     });
     await newEntry.save();
   }

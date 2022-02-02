@@ -24,13 +24,11 @@ class EntryController {
     for (let i = 0; i < entries.length; i++) {
       data.push({
         entry: entries[i],
-        category: categories.filter((e: ICategory) =>
-          e._id.equals(entries[i].category)
-        )[0]
+        category: categories.filter((e: ICategory) => e._id.equals(entries[i].category))[0]
       });
     }
 
-    reply.view('views/entries.hbs', { data: data, categories });
+    reply.view('views/entries.hbs', { data, categories });
   };
 
   static search = async (request: SearchRQ, reply: FastifyReply) => {
@@ -38,7 +36,7 @@ class EntryController {
 
     const { category } = request.body;
     const entries: Array<IEntry> = await EntryModel.find({
-      category: category
+      category
     }).lean();
 
     const categories: Array<ICategory> = await CategoryModel.find().lean();
@@ -50,13 +48,11 @@ class EntryController {
     for (let i = 0; i < entries.length; i++) {
       data.push({
         entry: entries[i],
-        category: categories.filter((e: ICategory) =>
-          e._id.equals(entries[i].category)
-        )[0]
+        category: categories.filter((e: ICategory) => e._id.equals(entries[i].category))[0]
       });
     }
 
-    reply.view('views/entries.hbs', { data: data, categories });
+    reply.view('views/entries.hbs', { data, categories });
   };
 
   static remove = async (request: RemoveRQ, reply: FastifyReply) => {

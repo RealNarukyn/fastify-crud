@@ -7,31 +7,47 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarcollapse">
                 <ul class="navbar-nav justify-content-between w-100">
-
+                    {{#unless user}}
+                    <li class="custom-li-nav">
+                        <span class="badge badge-info">
+                            <a class="nav-link nav-link-elem" href="/auth/login">Login</a>
+                        </span>
+                    </li>
+                    <li class="custom-li-nav">
+                        <span class="badge badge-info">
+                            <a class="nav-link nav-link-elem" href="/auth/signup">Sign Up</a>
+                        </span>
+                    </li>
+                    {{/unless}}
+                    
+                    {{#if user}}
                     <li class="custom-li-nav">
                         <span class="badge badge-danger">
                             <a class="nav-link nav-link-elem" href="/entries/rm-all">Delete all ENTRIES</a>
                         </span>
                     </li>
-
                     <li class="custom-li-nav">
                         <span class="badge badge-success">
                             <a href="/entries" class="nav-link nav-link-elem">Show Entries</a>
                         </span>
                     </li>
-
                     <li class="custom-li-nav">
                         <span class="badge badge-success">
                             <a href="/categories" class="nav-link nav-link-elem">Show Categories</a>
                         </span>
-
                     </li>
-
                     <li class="custom-li-nav">
                         <span class="badge badge-danger">
                             <a class="nav-link nav-link-elem" href="/categories/rm-all">Delete all CATEGORIES</a>
                         </span>
                     </li>
+                    <li class="custom-li-nav">
+                        <span class="badge badge-warning">
+                            <a class="nav-link nav-link-elem" href="/auth/logout">Log Out</a>
+                        </span>
+                    </li>
+                    {{/if}}
+
                 </ul>
             </div>
         </nav>

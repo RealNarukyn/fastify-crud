@@ -18,7 +18,6 @@ const mainRouter: FastifyPluginAsync = async (app: FastifyApp) => {
   app.register(entryRouter, { prefix: '/entries' });
   app.register(categoryRouter, { prefix: '/categories' });
   app.register(authRouter, { prefix: '/auth' });
-
 };
 
 export default mainRouter;
